@@ -1,28 +1,38 @@
 <h1>Sign up</h1>
 
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= @user.errors.count %> 件のエラーが発生したため、登録できませんでした。</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger" role="alert">
+      <h4><%= @user.errors.count %> 件のエラーが発生したため、登録できませんでした。</h4>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <% end %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "Create my account" %>
+<table class="user_form">
+  <tr>
+    <th><%= f.label :名前 %></th>
+    <td><%= f.text_field :name, size: "40" %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :メールアドレス %></th>
+    <td><%= f.email_field :email, size: "40" %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :パスワード %></th>
+    <td><%= f.password_field :password, size: "40" %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :パスワードの確認 %></th>
+    <td><%= f.password_field :password_confirmation, size: "40" %></td>
+  </tr>
+</table>
+<br>
+<%= f.submit "アカウント作成" %>
 <% end %>
