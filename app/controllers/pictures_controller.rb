@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:edit, :update]
+  before_action :set_picture, only: [:edit, :update, :destroy]
 
   def index
     @pictures = Picture.all.order(created_at: :desc)
@@ -29,6 +29,12 @@ class PicturesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @picture.destroy
+    flash[:notice] = '削除しました'
+    redirect_to pictures_path
   end
 
   private
