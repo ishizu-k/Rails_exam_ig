@@ -4,6 +4,12 @@
   <div class="picture">
     <%= form.text_area :content, size: "80x10" %>
   </div>
+  <div class="picture">
+    <%= form.label :画像 %>
+    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
   <br>
   <%= form.submit "投稿する"%>
 <% end %>
