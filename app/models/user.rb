@@ -8,4 +8,5 @@ class User < ApplicationRecord
   mount_uploader :face_image, ImageUploader
   has_many :pictures
   has_many :favorites, dependent: :destroy
+  has_many :favorite_pictures, through: :favorites, source: :picture
 end
