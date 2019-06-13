@@ -7,7 +7,8 @@
         <p><b>投稿者： </b></p>
         <%= image_tag picture.image %><br>
         <%= simple_format(picture.content) %>
-        <%= link_to "編集", edit_picture_path(picture.id) %>　
+        <%= link_to "編集", edit_picture_path(picture.id) %>
+        <%= link_to "削除", picture_path(picture.id), method: :delete, data: {confirm: '削除を実行しますか？'} %>
       </td>
     </tr>
   <% end %>
