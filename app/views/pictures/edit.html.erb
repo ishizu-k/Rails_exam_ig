@@ -1,29 +1,3 @@
 <h3>編集</h3>
 
-<%= form_with(model: @picture, local: true) do |form| %>
-  <% if @picture.errors.any? %>
-    <div id="error_explanation">
-      <div class="alert alert-danger" role="alert">
-        <ul>
-          <% @picture.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-
-
-  <div class="picture">
-    <%= form.text_area :content, size: "80x10" %>
-  </div>
-  <div class="picture">
-    <%= form.label :画像 %>
-    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-    <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
-  </div>
-  <br>
-  <%= form.submit "編集する"%>
-
-<% end %>
+<%= render 'form' %>
