@@ -37,6 +37,9 @@ class PicturesController < ApplicationController
     redirect_to pictures_path
   end
 
+  def confirm
+  end
+
   private
 
   def picture_params
