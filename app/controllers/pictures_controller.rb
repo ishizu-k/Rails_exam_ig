@@ -14,7 +14,7 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
     if @picture.save
       flash[:notice] = '投稿しました'
       redirect_to pictures_path
@@ -47,7 +47,7 @@ class PicturesController < ApplicationController
 
   def confirm
     if params[:id].nil?
-      @picture = Picture.new(picture_params)
+      @picture = current_user.pictures.build(picture_params)
       render :new if @picture.invalid?
     else
       set_picture

@@ -4,7 +4,7 @@
   <% @pictures.each do |picture| %>
     <tr>
       <td>
-        <p><b>投稿者： </b></p>
+        <p><b>投稿者： <%= picture.user.name %></b></p>
         <%= image_tag picture.image %><br>
         <%= simple_format(picture.content) %>
         <%= link_to "編集", edit_picture_path(picture.id) %>
