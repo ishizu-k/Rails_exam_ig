@@ -38,6 +38,16 @@ class PicturesController < ApplicationController
   end
 
   def confirm
+    if params[:id].nil?
+      @picture = Picture.new(picture_params)
+      render :new if @picture.invalid?
+    else
+      set_picture
+      @picture.content = picture_params[:content]
+      @picture.image = picture_params[:image]
+      @picture.image_cache = picture_params[:image_cache]
+      render :edit if @picture.invalid?
+    end
   end
 
   private
