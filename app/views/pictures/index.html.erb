@@ -1,0 +1,10 @@
+<table>
+  <% @pictures.each do |picture| %>
+    <tr>
+      <td>
+        <p><b>投稿者： </b></p>
+        <%= simple_format(picture.content) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
