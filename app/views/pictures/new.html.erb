@@ -1,6 +1,19 @@
 <h3>新規投稿</h3>
 
 <%= form_with(model: @picture, local: true) do |form| %>
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% @picture.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+
   <div class="picture">
     <%= form.text_area :content, size: "80x10" %>
   </div>
@@ -12,4 +25,5 @@
   </div>
   <br>
   <%= form.submit "投稿する"%>
+
 <% end %>

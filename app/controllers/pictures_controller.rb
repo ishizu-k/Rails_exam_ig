@@ -8,9 +8,13 @@ class PicturesController < ApplicationController
   end
 
   def create
-    Picture.create(picture_params)
-    flash[:notice] = '投稿しました'
-    redirect_to pictures_path
+    @picture = Picture.new(picture_params)
+    if @picture.save
+      flash[:notice] = '投稿しました'
+      redirect_to pictures_path
+    else
+      render 'new'
+    end
   end
 
   private
