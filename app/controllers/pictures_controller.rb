@@ -23,6 +23,12 @@ class PicturesController < ApplicationController
   end
 
   def update
+    if @picture.update(picture_params)
+      flash[:notice] = '編集しました'
+      redirect_to pictures_path
+    else
+      render 'edit'
+    end
   end
 
   private

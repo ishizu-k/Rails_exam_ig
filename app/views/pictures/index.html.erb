@@ -1,3 +1,5 @@
+<%= link_to "新規投稿", new_picture_path %>
+
 <table>
   <% @pictures.each do |picture| %>
     <tr>
@@ -5,7 +7,9 @@
         <p><b>投稿者： </b></p>
         <%= image_tag picture.image %><br>
         <%= simple_format(picture.content) %>
+        <%= link_to "編集", edit_picture_path(picture.id) %>　
       </td>
     </tr>
   <% end %>
 </table>
+<br>
