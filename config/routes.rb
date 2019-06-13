@@ -10,5 +10,5 @@ Rails.application.routes.draw do
       patch :confirm
     end
   end
-  resources :favorites, only: [:create, :destroy]
+  resources :favorites, only: [:index, :create, :destroy]
 end
