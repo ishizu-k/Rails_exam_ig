@@ -10,7 +10,9 @@
     </td>
   </tr>
 </table>
-<br>
-<%= link_to "プロフィールを編集する", edit_user_path(current_user.id) %>
+
+<% if @user.id == current_user.id %>
+  <%= link_to "プロフィールを編集する", edit_user_path(current_user.id) %>
+<% end %>
 <br>
 <%= link_to 'お気に入り一覧', favorites_path %>
