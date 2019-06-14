@@ -7,8 +7,19 @@
         <p><b>投稿者： <%= picture.user.name %></b></p>
         <%= image_tag picture.image %><br>
         <%= simple_format(picture.content) %>
+
         <%= link_to "編集", edit_picture_path(picture.id) %>
         <%= link_to "削除", picture_path(picture.id), method: :delete, data: {confirm: '削除を実行しますか？'} %>
+        <% favorite = current_user.favorites.find_by(picture_id: picture.id) %>
+        <% unless picture.user_id == current_user.id %>
+          <% if favorite.present? %>
+            <%= link_to 'お気に入り解除する', favorite_path(id: favorite.id), method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+            <%= link_to 'お気に入りする', favorites_path(picture_id: picture.id), method: :post, class: 'btn btn-primary' %>
+          <% end %>
+        <% end %>
+
+
       </td>
     </tr>
   <% end %>
