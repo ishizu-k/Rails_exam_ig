@@ -1,44 +1,6 @@
-<%= form_with(model: @user, local: true) do |f| %>
+<h3>プロフィール編集</h3>
 
-  <% if @user.errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-danger" role="alert">
-      <h4><%= @user.errors.count %> 件のエラーが発生したため、編集できませんでした。</h4>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-  <% end %>
-
-  <table class="user_form">
-    <tr>
-      <th><%= f.label :名前 %></th>
-      <td><%= f.text_field :name, size: "40" %></td>
-    </tr>
-    <tr>
-      <th><%= f.label :メールアドレス %></th>
-      <td><%= f.email_field :email, size: "40" %></td>
-    </tr>
-    <tr>
-      <th><%= f.label :プロフィール画像（任意） %></th>
-      <td><%= f.file_field :face_image %></td>
-    </tr>
-    <tr>
-      <th><%= f.label :パスワード %></th>
-      <td><%= f.password_field :password, size: "40" %></td>
-    </tr>
-    <tr>
-      <th><%= f.label :パスワードの確認 %></th>
-      <td><%= f.password_field :password_confirmation, size: "40" %></td>
-    </tr>
-  </table>
-
-<br>
-<%= f.submit "編集" %>
-<% end %>
+<%= render 'form' %>
 
   <br>
   <%= link_to '戻る', user_path(current_user.id) %>
