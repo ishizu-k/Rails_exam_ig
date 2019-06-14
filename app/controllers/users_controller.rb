@@ -38,4 +38,5 @@ class UsersController < ApplicationController
                                  :password_confirmation,
                                  :face_image, :face_image_cache)
   end
+
 end
