@@ -6,10 +6,10 @@
         <%= image_tag picture.image %><br>
         <%= simple_format(picture.content) %>
 
-
+        <% if picture.user_id == current_user.id %>
           <%= link_to "編集", edit_picture_path(picture.id) %>
           <%= link_to "削除", picture_path(picture.id), method: :delete, data: {confirm: '削除を実行しますか？'} %>
-
+        <% end %>
 
         <% favorite = current_user.favorites.find_by(picture_id: picture.id) %>
         <% unless picture.user_id == current_user.id %>
