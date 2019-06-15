@@ -5,3 +5,4 @@ class ContactMailer < ApplicationMailer
     mail to: "demekinn_96@yahoo.co.jp", subject: "お問い合わせの確認メール"
   end
 end
+  
