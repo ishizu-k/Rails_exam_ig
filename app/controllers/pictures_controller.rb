@@ -4,8 +4,6 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.all.order(created_at: :desc)
-#    binding.pry
-    # @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   def new
@@ -60,10 +58,6 @@ class PicturesController < ApplicationController
       @picture.image_cache = picture_params[:image_cache]
       render :edit if @picture.invalid?
     end
-  end
-
-  def show
-    @favorite = current_user.favorites.find_by(picture_id: @picture.id)
   end
 
   private
