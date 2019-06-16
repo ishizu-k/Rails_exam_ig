@@ -1,12 +1,17 @@
-<h3>お気に入り一覧</h3>
+<div class= main>
+  <h3>お気に入り一覧</h3>
 
-<table>
-<% @favorite.each do |favorite| %>
-  <tr>
-    <td>
-      <p><b>投稿者： <%= favorite.picture.user.name %></b></p>
-      <%= image_tag(favorite.picture.image) %><br>
-      <%= favorite.picture.content %>
-    </td>
-  </tr>
-<% end %>
+  <table>
+  <% @favorite.each do |favorite| %>
+    <tr>
+      <td>
+        <div class="box">
+          <p><b>投稿者： <%= favorite.picture.user.name %></b></p>
+          <%= image_tag(favorite.picture.image) %><br>
+          <%= favorite.picture.content %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>

@@ -1,0 +1,75 @@
+html {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+li{
+    list-style:none;
+}
+ul{
+    padding:0;
+}
+
+.menu{
+    background-color:#f6e5cc;
+    color:#fff;
+}
+.menu li {
+    padding:1% 1%;
+    text-align:center;
+}
+
+.container {
+  width: 100%;
+  background-color: #f6e5cc;
+  padding: 20px 0 10px 0;
+  height: 50px;
+  color :black;
+  padding-bottom: 80px;
+  a:link { color: #fff; text-decoration: none; }
+  a:visited { color: #fff; text-decoration: none; }
+  a:hover { color: #fff; font-weight: bold; text-decoration: none; }
+}
+
+.main {
+  width: 700px;
+  margin: 0 auto;
+  padding-bottom: 200px;
+  color: gray;
+  a:link { color: gray; text-decoration: none; }
+  a:visited { color: gray; text-decoration: none; }
+  a:hover { color: gray; font-weight: bold; text-decoration: none; }
+}
+
+header {
+  color: #fff;
+  text-align: center;
+}
+
+.header {
+  font-size: 4rem;
+  font-family: 'arial black';
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  background-color:#f6e5cc;
+  padding: 20px 0 10px 0;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.flash {
+  text-align: center;
+  padding: 50px;
+}
