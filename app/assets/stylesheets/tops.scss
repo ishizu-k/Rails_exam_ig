@@ -14,7 +14,8 @@ ul{
 }
 
 .menu{
-    background-color: #f6e5cc;
+  background-color: #f6e5cc;
+  font-family: 'arial black';
 }
 .menu li {
     padding:1% 1%;
@@ -30,7 +31,7 @@ ul{
   padding-bottom: 80px;
   a:link { color: #fff; text-decoration: none; }
   a:visited { color: #fff; text-decoration: none; }
-  a:hover { color: #fff; font-weight: bold; text-decoration: none; }
+  a:hover { color: #f6e5cc; background-color: #fff; text-decoration: none; }
 }
 
 .main {

@@ -13,15 +13,15 @@
         <p class="header">instagram clone</p>
         <nav class="menu">
           <ul class="row">
-            <li class="col-md-3"><%= link_to "一覧", pictures_path %></li>
-            <li class="col-md-3"><%= link_to '新規投稿', new_picture_path %></li>
+            <li class="col-md-3"><%= link_to "　List　", pictures_path %></li>
+            <li class="col-md-3"><%= link_to '　New　', new_picture_path %></li>
 
             <% if logged_in? %>
-              <li class="col-md-3"><%= link_to "プロフィール", user_path(current_user.id) %></li>
-              <li class="col-md-3"><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+              <li class="col-md-3"><%= link_to "　Profile　", user_path(current_user.id) %></li>
+              <li class="col-md-3"><%= link_to "　Log out　", session_path(current_user.id), method: :delete %></li>
             <% else %>
-              <li class="col-md-3"><%= link_to "ユーザー登録", new_user_path %></li>
-              <li class="col-md-3"><%= link_to "ログイン", new_session_path %></li>
+              <li class="col-md-3"><%= link_to "　Sign up　", new_user_path %></li>
+              <li class="col-md-3"><%= link_to "　Log in　", new_session_path %></li>
             <% end %>
           </ul>
         </nav>
