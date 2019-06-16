@@ -1,19 +1,19 @@
 <div class= main>
-<h4>以下の内容で投稿しますか？</h4>
+  <h4>以下の内容で投稿しますか？</h4>
 
-<%= form_with(model: @picture, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-  <%= form.hidden_field :image_cache %>
+  <%= form_with(model: @picture, local: true) do |form| %>
+    <%= form.hidden_field :content %>
+    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+    <%= form.hidden_field :image_cache %>
+    <br>
+    <%= @picture.content %>
+    <br>
+    <%= form.submit  "投稿する" %>
+  <% end %>
   <br>
-  <%= @picture.content %>
-  <br>
-  <%= form.submit  "投稿する" %>
-<% end %>
-<br>
-<%= form_with(model: @picture, local: true, url: back_confirm, method: 'get') do |form| %>
-  <%= form.hidden_field :content %>
-  <%= form.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: 'back' %>
-<% end %>
+  <%= form_with(model: @picture, local: true, url: back_confirm, method: 'get') do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.hidden_field :image_cache %>
+    <%= form.submit "戻る", name: 'back' %>
+  <% end %>
 </div>
