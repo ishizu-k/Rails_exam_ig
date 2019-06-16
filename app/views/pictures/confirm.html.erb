@@ -1,3 +1,4 @@
+<div class= main>
 <h4>以下の内容で投稿しますか？</h4>
 
 <%= form_with(model: @picture, local: true) do |form| %>
@@ -14,3 +15,4 @@
   <%= form.hidden_field :image_cache %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>
+</div>

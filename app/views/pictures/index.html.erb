@@ -1,15 +1,19 @@
+<div class= main>
 <table>
   <% @pictures.each do |picture| %>
     <tr>
       <td>
+        <div class="box">
         <p><b>投稿者： <%= picture.user.name %></b></p>
         <%= image_tag picture.image %><br>
         <%= simple_format(picture.content) %>
 
+        <div class="icon">
         <% if picture.user_id == current_user.id %>
-          <%= link_to "編集", edit_picture_path(picture.id) %>
-          <%= link_to "削除", picture_path(picture.id), method: :delete, data: {confirm: '削除を実行しますか？'} %>
+          <%= link_to image_tag('pen.png'), edit_picture_path(picture.id) %>
+          <%= link_to image_tag('delete2.png'), picture_path(picture.id), method: :delete, data: {confirm: '削除を実行しますか？'} %>
         <% end %>
+        </div>
 
         <% favorite = current_user.favorites.find_by(picture_id: picture.id) %>
         <% unless picture.user_id == current_user.id %>
@@ -19,8 +23,10 @@
             <%= link_to 'お気に入りする', favorites_path(picture_id: picture.id), method: :post, class: 'btn btn-primary' %>
           <% end %>
         <% end %>
+
+        </div>
       </td>
     </tr>
   <% end %>
 </table>
-<br>
+</div>
