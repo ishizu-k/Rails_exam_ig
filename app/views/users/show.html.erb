@@ -1,7 +1,10 @@
 <div class= main>
   <h3>プロフィール</h3>
+  <br>
 
   <%= image_tag @user.face_image.url %><br>
+
+  <br>
 
   <table>
     <tr>
@@ -20,6 +23,7 @@
     <%= link_to "プロフィールを編集する", edit_user_path(current_user.id) %>
   <% end %>
 
+  <br>
   <br>
 
   <%= link_to 'お気に入り一覧', favorites_path %>

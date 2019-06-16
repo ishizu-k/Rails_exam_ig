@@ -5,7 +5,8 @@
   <%= form.hidden_field :content %>
   <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
   <%= form.hidden_field :image_cache %>
-  <p>内容　<%= @picture.content %></p>
+  <br>
+  <%= @picture.content %>
   <br>
   <%= form.submit  "投稿する" %>
 <% end %>
