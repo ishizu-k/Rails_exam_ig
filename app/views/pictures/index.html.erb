@@ -13,16 +13,16 @@
           <%= link_to image_tag('pen.png'), edit_picture_path(picture.id) %>
           <%= link_to image_tag('delete2.png'), picture_path(picture.id), method: :delete, data: {confirm: '削除を実行しますか？'} %>
         <% end %>
-        </div>
 
         <% favorite = current_user.favorites.find_by(picture_id: picture.id) %>
         <% unless picture.user_id == current_user.id %>
           <% if favorite.present? %>
-            <%= link_to 'お気に入り解除', favorite_path(id: favorite.id), method: :delete, class: 'btn btn-danger' %>
+            <%= link_to image_tag('heart_black.png'), favorite_path(id: favorite.id), method: :delete %>
           <% else %>
-            <%= link_to 'お気に入り登録', favorites_path(picture_id: picture.id), method: :post, class: 'btn btn-primary' %>
+            <%= link_to image_tag('heart_white.png'), favorites_path(picture_id: picture.id), method: :post %>
           <% end %>
         <% end %>
+        </div>
 
         </div>
       </td>
