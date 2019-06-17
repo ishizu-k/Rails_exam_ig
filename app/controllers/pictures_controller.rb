@@ -18,7 +18,7 @@ class PicturesController < ApplicationController
     @picture = current_user.pictures.build(picture_params)
     if @picture.save
       flash[:notice] = '投稿しました'
-      ContactMailer.contact_mail(@picture).deliver  ##追記
+#      ContactMailer.contact_mail(@picture).deliver
       redirect_to pictures_path
     else
       render 'new'

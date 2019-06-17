@@ -1,16 +1,11 @@
 <div class= main>
   <h3>プロフィール</h3>
   <br>
-
-
-
   <% if @user.face_image.nil? %>
     <%= image_tag('1.png') %>
   <% else %>
     <%= image_tag @user.face_image.url %><br>
   <% end %>
-
-
   <br>
 
   <table>
