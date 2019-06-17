@@ -46,5 +46,4 @@ class UsersController < ApplicationController
       redirect_to pictures_path
     end
   end
-
 end

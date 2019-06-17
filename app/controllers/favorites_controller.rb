@@ -15,5 +15,4 @@ class FavoritesController < ApplicationController
     flash[:notice] = "#{favorite.picture.user.name}さんの投稿をお気に入り解除しました"
     redirect_to pictures_url
   end
-
 end
