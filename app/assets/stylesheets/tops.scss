@@ -14,7 +14,7 @@ ul{
 }
 
 .menu{
-  background-color: #f6e5cc;
+  background-color: #009b9f;
   font-family: 'arial black';
 }
 .menu li {
@@ -27,11 +27,11 @@ ul{
   background-color: #fff;
   padding: 20px 0 10px 0;
   height: 50px;
-  color: #f6e5cc;
+  color: #009b9f;
   padding-bottom: 80px;
   a:link { color: #fff; text-decoration: none; }
   a:visited { color: #fff; text-decoration: none; }
-  a:hover { color: #f6e5cc; background-color: #fff; text-decoration: none; }
+  a:hover { color: #009b9f; background-color: #fff; text-decoration: none; }
 }
 
 .main {
@@ -41,7 +41,7 @@ ul{
   color: gray;
   a:link { color: gray; text-decoration: none; }
   a:visited { color: gray; text-decoration: none; }
-  a:hover { color: gray; font-weight: bold; text-decoration: none; }
+  a:hover { color: #009b9f; font-weight: bold; text-decoration: none; }
 }
 
 header {
@@ -57,7 +57,7 @@ header {
 footer {
   height: 50px;
   width: 100%;
-  background-color:#f6e5cc;
+  background-color: #009b9f;
   padding: 20px 0 10px 0;
   color: #fff;
   text-align: center;

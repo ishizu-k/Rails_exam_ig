@@ -15,9 +15,9 @@
           <ul class="row">
             <li class="col-md-3"><%= link_to "　List　", pictures_path %></li>
             <li class="col-md-3"><%= link_to '　New　', new_picture_path %></li>
-
             <% if logged_in? %>
-              <li class="col-md-3"><%= link_to "　Profile　", user_path(current_user.id) %></li>
+              <li class="col-md-3"><%= link_to "　Profile　", user_path(current_user.id) %>
+              　　<%= link_to "　★　", favorites_path %></li>
               <li class="col-md-3"><%= link_to "　Log out　", session_path(current_user.id), method: :delete %></li>
             <% else %>
               <li class="col-md-3"><%= link_to "　Sign up　", new_user_path %></li>
