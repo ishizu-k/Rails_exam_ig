@@ -9,7 +9,7 @@ end
 gem 'rails', '~> 5.1.1'
 
 #Middleware
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 gem 'pg', '~> 0.18'
 
 #View/Front
